@@ -27,10 +27,14 @@ if(size<desiredsize):
     exit()
 
 while size>desiredsize:
-    p.save(b,quality=qua)
-    qua=qua-stepsize
-    time.sleep(1)
-    size=os.path.getsize(b)
+    if(qua>0):
+        p.save(b,quality=qua)
+        qua=qua-stepsize
+        time.sleep(1)
+        size=os.path.getsize(b)
+    else:
+        print("Unable to process the image to a smaller one, the smallest possible is being stored\n")
+        break
 
 print("Scripted by Ankan Das, UEM-Kolkata\n")
 time.sleep(5)
