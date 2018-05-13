@@ -13,13 +13,13 @@ b=input("Enter save path\n")
 inputsize=input("Enter desired size\nNOTE: Put space after size and mention type like: B or KB or MB or GB)\n")
 inputsize=inputsize.split(' ')
 if(inputsize[1].upper()=="B"):
-    desiredsize=int(inputsize[0])
+    desiredsize=int(float(inputsize[0]))
 elif(inputsize[1].upper()=="KB"):
-    desiredsize=int(inputsize[0])*1024
+    desiredsize=int(float(inputsize[0])*1024)
 elif(inputsize[1].upper()=="MB"):
-    desiredsize=int(inputsize[0])*1024*1024
+    desiredsize=int(float(inputsize[0])*1024*1024)
 elif(inputsize[1].upper()=="GB"):
-    desiredsize=int(inputsize[0])*1024*1024*1024
+    desiredsize=int(float(inputsize[0])*1024*1024*1024)
 
 size=os.path.getsize(a)
 if(size<desiredsize):
